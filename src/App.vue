@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<!--<MainBoard v-bind:screen_size="screen_size" />-->
+	<MainBoard />
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainBoard from "./components/router_vue.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+
+	components: {
+		MainBoard,
+	},
+	
+	data() {
+		return {
+			//screen_size: [screen.width, screen.height]	
+		}
+	},
 }
 </script>
 
 <style>
+	html {
+		padding: 	0;
+		margin:		0;
+
+		overflow-x:	hidden;	
+		overflow-y:	hidden;	
+	}	
+
+	body {
+		padding: 	0;
+		margin:		0;	
+	}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
