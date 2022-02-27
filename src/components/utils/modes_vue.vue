@@ -1,21 +1,45 @@
 <template>
 	<div id="panel">
+		<p id=parName>{{ Mode }}</p>
+
 		<div class="dropdown">
-			<button class="dropbtn">Dropdown</button>                            
+			<button class="dropbtn">Setup</button>                            
 			<div class="dropdown-content">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
+				<a 	v-for = "(item, index) in DropDown"
+					:key = "index"	
+				>
+					{{ item }}	
+				</a>
+
 			</div>
 		</div>
 	</div>
 </template>
 
 
+<script>
+export default {
+	data() {
+		return {
+		}
+	},
+
+	props:	{
+		Mode:		String,
+		DropDown:	Array,
+	},
+};
+
+</script>
+
+
 <style>
+	#parName {
+		position:	absolute;
+
+		left:		4px;	
+	}
+
 	#panel {
 		position: 	relative; 
 		
@@ -27,8 +51,9 @@
 		padding:	0;
 		margin:		0;
 
-		border:		1px solid white;
+		/*border:		1px solid white;*/
 
+		cursor: pointer;
 		margin-bottom:	5px;	
 	}
 
@@ -49,7 +74,6 @@
         
 		font-size: 16px;
 		border: none;
-		cursor: pointer;
 
 		border-radius:  1px;
                 
@@ -66,7 +90,7 @@
                 background-color: #f9f9f9;
                 min-width: 160px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
+                z-index: 2;
         }
 
         .dropdown-content a {
@@ -85,12 +109,7 @@
         .dropdown:hover .dropbtn {
                 background-color: #3e8e41;
         }
+
 </style>
 
-
-
-<script>
-
-
-</script>
 
